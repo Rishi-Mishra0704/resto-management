@@ -46,3 +46,6 @@ func (server *Server) setupRouter() {
 func (server *Server) Start(address string) error {
 	return server.router.Start(address)
 }
+func errorResponse(err error) map[string]string {
+	return map[string]string{"error": err.Error()}
+}
