@@ -15,13 +15,11 @@ import (
 
 type CreateUserRequest struct {
 	Username string `json:"username"`
-	FullName string `json:"fullname"`
 	Email    string `json:"email"`
 	Password string `json:"password"`
 }
 type UserResponse struct {
 	Username          string           `json:"username"`
-	FullName          string           `json:"fullname"`
 	Email             string           `json:"email"`
 	PasswordChangedAt pgtype.Timestamp `json:"password_changed_at"`
 	CreatedAt         pgtype.Timestamp `json:"created_at"`
@@ -42,10 +40,8 @@ type LoginUserResponse struct {
 
 func newUserResponse(user db.User) UserResponse {
 	return UserResponse{
-		Username: user.Username,
-		//FullName:          user.FullName,
-		Email: user.Email,
-		//PasswordChangedAt:   user.PasswordChangedAt,
+		Username:  user.Username,
+		Email:     user.Email,
 		CreatedAt: user.CreatedAt,
 	}
 }
