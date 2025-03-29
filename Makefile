@@ -2,7 +2,7 @@ clean:
 	rm ./bin
 
 build_win: clean
-	go build -o ./bin/app
+	go build -o ./bin/app.exe
 
 run_win: build_win
 	./bin/app.exe
