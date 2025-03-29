@@ -1,11 +1,11 @@
 package server
 
 import (
-	
+
 	//"database/sql"
 	"net/http"
 	db "resto-backend/db/sqlc"
-	"resto-backend/util"
+	utill "resto-backend/util"
 	"time"
 
 	"github.com/google/uuid"
@@ -61,13 +61,9 @@ func (server *Server) createUser(ctx echo.Context) error {
 	}
 
 	arg := db.CreateUserParams{
-		Username:       request.Username,
-		HashedPassword: hashedPassword,
-		FullName:       request.FullName,
-		Email:          request.Email,
+		Username:     request.Username,
+		PasswordHash: hashedPassword,
+		Email:        request.Email,
+	}
 
 }
-}
-// func Login(c echo.Context) error {
-// 	return c.String(200, "Login")
-// }

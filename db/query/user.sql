@@ -3,7 +3,7 @@ SELECT * FROM users;
 
 
 -- name: CreateUser :one
-INSERT INTO users (username, hashed_password, full_name, email)
-VALUES ($1, $2, $3, $4)
+INSERT INTO users (username, password_hash, email)
+VALUES ($1, $2, $3)
 RETURNING *;
 
